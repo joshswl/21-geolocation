@@ -61,6 +61,10 @@
       navigator.geolocation.watchPosition((data) => {
           console.log(data);
           speed.textContent = data.coords.speed;
+          arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+      }, (err) => {
+          console.err(err);
+          alert('You need to ALLOW me to use your location!!!');
       });
       
   </script>
